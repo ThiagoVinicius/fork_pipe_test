@@ -1,0 +1,18 @@
+LOCAL_PATH := $(call my-dir)
+
+# Build fork_pipe_test
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := fork_pipe_test.c
+LOCAL_C_INCLUDES :=
+LOCAL_CFLAGS := -W -Wall
+LOCAL_STATIC_LIBRARIES := libc
+LOCAL_MODULE := recovery_fork_pipe_test
+LOCAL_MODULE_TAGS := eng
+LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
+LOCAL_UNSTRIPPED_PATH := $(PRODUCT_OUT)/symbols/recovery
+LOCAL_MODULE_STEM := fork_pipe_test
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+include $(BUILD_EXECUTABLE)
+
